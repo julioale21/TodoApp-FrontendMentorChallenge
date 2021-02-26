@@ -32,8 +32,8 @@ export default {
 .check-bg {
   background-image: linear-gradient(
     90deg,
-    hsl (192, 100%, 67%),
-    hsl (280, 87%, 65%)
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
   );
 }
 
