@@ -1,7 +1,8 @@
 <template>
-  <div class="todo-list dragArea">
+  <ul class="todo-list dragArea">
     <todo-item v-for="todo in todos" :key="todo.id" :todo="todo" />
-
+  </ul>
+  <div>
     <span v-if="todos.length" class="drag-message">
       <small>Drag and drop to reorder list</small>
     </span>
@@ -41,8 +42,7 @@ export default {
 <style>
 .todo-list {
   width: 100%;
-  min-width: 330px;
-  border-radius: 6px;
+  min-width: 327px;
   padding-left: 0;
 }
 .todo-control {
@@ -51,7 +51,7 @@ export default {
 }
 @media screen and (min-width: 1024px) {
   .todo-list {
-    min-width: 570px;
+    min-width: 541px;
     border-radius: 5px;
   }
 }

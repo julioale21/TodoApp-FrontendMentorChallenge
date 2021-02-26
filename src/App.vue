@@ -1,14 +1,6 @@
 <template>
-  <div class="d-flex flex-column">
-    <div
-      class="app-header"
-      :class="[
-        theme.value === 'dark' ? 'app-header-bg-dark' : 'app-header-bg-light'
-      ]"
-    ></div>
-    <div class="todo-body">
-      <TodoView />
-    </div>
+  <div>
+    <TodoView />
   </div>
 </template>
 
@@ -53,48 +45,66 @@ export default {
 
   --font: "Josefin Sans", sans-serif;
 }
+
+html {
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+h6 {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  line-height: 1.6;
+}
+
 body {
   font-family: Josefin Sans;
   font-size: 18px;
-}
-.todo-body {
-  background-color: black;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.app-header {
-  height: 27vh;
-}
-.header-light-bg {
-  background-image: url("./assets/bg-mobile-light.jpg");
-}
-.app-header-bg-dark {
-  background-image: url("./assets/bg-mobile-dark.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-.app-header-bg-light {
-  background-image: url("./assets/bg-mobile-light.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-@media screen and (min-width: 1440px) {
-  .app-header-bg-dark {
-    background-image: url("./assets/bg-mobile-dark.jpg");
-  }
-  .app-header-bg-light {
-    background-image: url("./assets/bg-mobile-light.jpg");
-  }
-  .app-header {
-    height: 43vh;
-  }
-}
-.desktop {
-  size: 1440px;
-}
-.mobile {
-  size: 375px;
 }
 </style>
