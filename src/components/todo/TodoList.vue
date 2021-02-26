@@ -1,0 +1,58 @@
+<template>
+  <div class="todo-list dragArea">
+    <todo-item v-for="todo in todos" :key="todo.id" :todo="todo" />
+
+    <span v-if="todos.length" class="drag-message">
+      <small>Drag and drop to reorder list</small>
+    </span>
+  </div>
+</template>
+
+<script>
+import { computed, inject, provide, ref } from "vue";
+import TodoItem from "./TodoItem.vue";
+
+export default {
+  name: "TodoList",
+  components: { TodoItem },
+  setup() {
+    const todosAll = inject("todos");
+    const status = ref("all");
+
+    const todos = computed(() => {
+      if (status.value === "active") {
+        return todosAll.value.filter(todo => todo.completed === false);
+      }
+      if (status.value === "completed") {
+        return todosAll.value.filter(todo => todo.completed === true);
+      }
+
+      return todosAll.value;
+    });
+    provide("status", status);
+    return {
+      todosAll,
+      todos
+    };
+  }
+};
+</script>
+
+<style>
+.todo-list {
+  width: 100%;
+  min-width: 330px;
+  border-radius: 6px;
+  padding-left: 0;
+}
+.todo-control {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1024px) {
+  .todo-list {
+    min-width: 570px;
+    border-radius: 5px;
+  }
+}
+</style>
