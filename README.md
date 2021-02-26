@@ -38,24 +38,24 @@ Your users should be able to:
 
 #### Dark Theme
 <div>
-  <img src="./design/desktop-design-dark.jpg">
+  <img src="./docs/desktop-design-dark.jpg">
 </div>
 
 #### Light Theme
 <div>
-  <img src="./design/desktop-design-light.jpg">
+  <img src="./docs/desktop-design-light.jpg">
 </div>
 
 ## Mobile Design
 
 #### Dark Theme
 <p align="center">
-  <img src="./design/mobile-design-dark.jpg">
+  <img src="./docs/mobile-design-dark.jpg">
 </p>
 
 #### Light Theme
 <p align="center">
-  <img src="./design/mobile-design-light.jpg">
+  <img src="./docs/mobile-design-light.jpg">
 </p>
 
 ## Demo
