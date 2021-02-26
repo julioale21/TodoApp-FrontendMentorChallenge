@@ -1,23 +1,9 @@
 <template>
   <div class="d-flex flex-column">
-    <Header :theme="theme" />
+    <Header :theme="theme" @toggle-theme="toggleTheme" />
 
     <div class="todo-body">
       <div class="todo-content d-flex flex-column align-items-center">
-        <div class="todo-content-header">
-          <h1 class="todo-content-title">TODO</h1>
-          <span
-            role="button"
-            v-if="theme === 'dark'"
-            @click="toggleTheme('light')"
-          >
-            <img width="20" src="../assets/icon-sun.svg" />
-          </span>
-          <span v-else role="button" @click="toggleTheme('dark')">
-            <img width="20" src="../assets/icon-moon.svg" />
-          </span>
-        </div>
-
         <TodoList />
       </div>
     </div>
@@ -76,15 +62,6 @@ export default {
 .todo-content {
   margin-top: -6rem;
   min-width: 328px;
-}
-
-.todo-content-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 4rem;
 }
 
 .todo-content-title {
