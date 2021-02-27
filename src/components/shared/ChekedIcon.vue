@@ -1,6 +1,6 @@
 <template>
   <div class="circle" :class="[completed ? 'check-bg' : 'uncheck-bg']">
-    <img v-show="completed" src="../../assets/icon-check.svg" />
+    <img v-show="completed" alt="completed" src="../../assets/icon-check.svg" />
   </div>
 </template>
 
