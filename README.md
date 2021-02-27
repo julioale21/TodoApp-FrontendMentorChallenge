@@ -105,5 +105,3 @@ npm run build
 
 Settings for Continuous Deployment from a Git repository on Netlify 
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
