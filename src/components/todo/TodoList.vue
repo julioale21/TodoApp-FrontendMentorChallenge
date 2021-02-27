@@ -1,7 +1,7 @@
 <template>
-  <ul class="todo-list dragArea">
+  <draggable class="todo-list dragArea" :list="todos">
     <todo-item v-for="todo in todos" :key="todo.id" :todo="todo" />
-  </ul>
+  </draggable>
   <div v-if="todosAll.length" class="todo-control">
     <TodoListFooter />
     <TodoListFilter class="d-md-none" />
@@ -18,10 +18,16 @@ import { computed, inject, provide, ref } from "vue";
 import TodoItem from "./TodoItem.vue";
 import TodoListFooter from "./TodoListFooter";
 import TodoListFilter from "./TodoListFilter";
+import { VueDraggableNext } from "vue-draggable-next";
 
 export default {
   name: "TodoList",
-  components: { TodoItem, TodoListFooter, TodoListFilter },
+  components: {
+    draggable: VueDraggableNext,
+    TodoItem,
+    TodoListFooter,
+    TodoListFilter
+  },
   setup() {
     const todosAll = inject("todos");
     const status = ref("all");
