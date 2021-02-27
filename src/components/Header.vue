@@ -3,10 +3,10 @@
     <div class="todo-content-header">
       <h1 class="todo-content-title">TODO</h1>
       <span role="button" v-if="theme === 'dark'" @click="toggleTheme('light')">
-        <img width="20" src="../assets/icon-sun.svg" />
+        <img width="20" alt="icon-sun" src="../assets/icon-sun.svg" />
       </span>
       <span v-else role="button" @click="toggleTheme('dark')">
-        <img width="20" src="../assets/icon-moon.svg" />
+        <img width="20" alt="icon-moon" src="../assets/icon-moon.svg" />
       </span>
     </div>
   </div>
