@@ -6,7 +6,7 @@
 
 <script>
 import TodoView from "./views/TodoView";
-import { provide, ref } from "vue";
+import { provide, ref, watchEffect } from "vue";
 export default {
   name: "App",
   components: { TodoView },
@@ -16,6 +16,12 @@ export default {
     if (localStorage.getItem("theme")) {
       theme.value = JSON.parse(localStorage.getItem("theme"));
     }
+
+    watchEffect(() => {
+      localStorage.setItem("theme", JSON.stringify(theme.value));
+      const doc = document.documentElement;
+      doc.setAttribute("theme", theme.value);
+    });
     provide("theme", theme);
     return {
       theme
@@ -24,11 +30,12 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 :root {
   /* Dark Theme */
   --first-color: hsl(220, 98%, 61%);
+
   --very-dark-blue-color: hsl(235, 21%, 11%);
   --very-dark-desaturated-blue-color: hsl(235, 24%, 19%);
   --light-grayish-blue-color: hsl(234, 39%, 85%);
@@ -62,6 +69,8 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
+  font-family: Josefin Sans;
+  font-size: 18px;
 }
 
 h1 {
@@ -103,8 +112,77 @@ p {
   line-height: 1.6;
 }
 
-body {
-  font-family: Josefin Sans;
-  font-size: 18px;
+[theme="light"] {
+  .todo-form {
+    background-color: white;
+  }
+  .app-header-bg-light {
+    background-image: url("./assets/bg-mobile-light.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .drag-message {
+    color: var(--dark-grayish-blue-color);
+  }
+
+  .todo {
+    background-color: white;
+    border-top: thin solid var(--light-grayish-blue-color);
+    border-bottom: thin solid var(--light-grayish-blue-color);
+  }
+
+  .todo-body {
+    background-color: var(--very-light-gray-color);
+  }
+
+  .todo-content-title {
+    color: white;
+  }
+
+  @media screen and (min-width: 768px) {
+    .app-header-bg-light {
+      background-image: url("./assets/bg-desktop-light.jpg");
+    }
+  }
+}
+
+[theme="dark"] {
+  .todo-form {
+    background-color: var(--very-dark-desaturated-blue-color);
+    &-input {
+      @extend .todo-form;
+    }
+  }
+
+  .app-header-bg-dark {
+    background-image: url("./assets/bg-mobile-dark.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .drag-message {
+    color: var(--dark-grayish-blue-color);
+  }
+
+  .todo {
+    background-color: var(--very-dark-desaturated-blue-color);
+    border-top: thin solid var(--very-dark-grayish-blue-color);
+    border-bottom: thin solid var(--very-dark-grayish-blue-color);
+  }
+
+  .todo-content-title {
+    color: var(--light-grayish-blue-hover-color);
+  }
+
+  .todo-body {
+    background-color: black;
+  }
+
+  @media screen and (min-width: 768px) {
+    .app-header-bg-dark {
+      background-image: url("./assets/bg-desktop-dark.jpg");
+    }
+  }
 }
 </style>

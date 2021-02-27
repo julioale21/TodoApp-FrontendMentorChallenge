@@ -42,33 +42,26 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.app-header-bg-dark {
-  background-image: url("../assets/bg-mobile-dark.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-.app-header-bg-light {
-  background-image: url("../assets/bg-mobile-light.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
+
 .todo-content-header {
-  width: 338px;
+  width: 327px;
   display: flex;
   justify-content: space-between;
   padding: 0;
   margin: 0;
   margin-bottom: 4rem;
 }
-@media screen and (min-width: 1440px) {
-  .app-header-bg-dark {
-    background-image: url("../assets/bg-desktop-dark.jpg");
-  }
-  .app-header-bg-light {
-    background-image: url("../assets/bg-desktop-light.jpg");
-  }
+
+.todo-content-title {
+  letter-spacing: 1rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
   .app-header {
     height: 43vh;
+  }
+  .todo-content-header {
+    width: 541px;
   }
 }
 </style>

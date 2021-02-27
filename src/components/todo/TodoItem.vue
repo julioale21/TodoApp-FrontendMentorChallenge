@@ -62,16 +62,13 @@ export default {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 3.4rem;
+  height: 3.25rem;
   padding-right: 1rem;
-  background-color: var(--very-dark-desaturated-blue-color);
-  border-top: thin solid var(--very-dark-grayish-blue-color);
-  border-bottom: thin solid var(--very-dark-grayish-blue-color);
+
   border-radius: 3px;
 }
 
 .todo li {
-  background-color: var(--very-dark-desaturated-blue-color);
   color: var(--dark-grayish-blue-color);
   border: none;
   display: flex;
@@ -91,7 +88,7 @@ export default {
   color: var(--light-grayish-blue-hover-color);
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .todo {
     height: 4rem;
   }

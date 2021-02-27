@@ -4,6 +4,7 @@
 
     <div class="todo-body">
       <div class="todo-content d-flex flex-column align-items-center">
+        <TodoForm :theme="theme" />
         <TodoList />
       </div>
     </div>
@@ -14,10 +15,11 @@
 import { inject, provide, ref, watchEffect } from "vue";
 import Header from "../components/Header";
 import TodoList from "../components/todo/TodoList";
+import TodoForm from "../components/todo/TodoForm.vue";
 
 export default {
   name: "TodoView",
-  components: { Header, TodoList },
+  components: { Header, TodoList, TodoForm },
   setup() {
     const todos = ref([]);
     const theme = inject("theme");
@@ -38,7 +40,6 @@ export default {
 
     watchEffect(() => {
       localStorage.setItem("todos", JSON.stringify(todos.value));
-      localStorage.setItem("theme", JSON.stringify(theme.value));
     });
 
     provide("todos", todos);
@@ -52,7 +53,6 @@ export default {
 
 <style scoped>
 .todo-body {
-  background-color: black;
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -60,7 +60,7 @@ export default {
 }
 
 .todo-content {
-  margin-top: -6rem;
+  margin-top: -9rem;
   min-width: 328px;
 }
 
@@ -70,7 +70,7 @@ export default {
   font-weight: 700;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .todo-content {
     min-width: 541px;
   }

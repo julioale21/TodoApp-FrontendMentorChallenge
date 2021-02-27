@@ -49,7 +49,14 @@ export default {
   display: flex;
   flex-direction: column;
 }
-@media screen and (min-width: 1024px) {
+.drag-message {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  color: var(--dark-grayish-blue-color);
+  font-size: 0.8rem;
+}
+@media screen and (min-width: 768px) {
   .todo-list {
     min-width: 541px;
     border-radius: 5px;
