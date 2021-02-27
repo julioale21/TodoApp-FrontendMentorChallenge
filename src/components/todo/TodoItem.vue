@@ -81,7 +81,7 @@ export default {
   font-size: 0.7rem;
   display: flex;
   align-items: center;
-  height: 2rem;
+  height: 2.9rem;
 }
 
 .todo li:hover {
