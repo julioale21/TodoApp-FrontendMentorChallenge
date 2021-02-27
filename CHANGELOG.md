@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/julioale21/TodoApp-FrontendMentorChallenge/compare/0.2.0...0.3.0) (2021-02-27)
+
+
+### Features
+
+* **drag and drop:** added user can drag and drop elements to order list ([3441cb0](https://github.com/julioale21/TodoApp-FrontendMentorChallenge/commit/3441cb05d1d01a960f295c699f1e003bc0e7cb39))
+
 # 0.2.0 (2021-02-27)
 
 
