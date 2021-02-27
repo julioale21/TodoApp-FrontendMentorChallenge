@@ -61,6 +61,7 @@ export default {
   margin-right: 1rem;
   width: 100%;
   outline: none;
+  font-size: 0.8rem;
 }
 
 @media screen and (min-width: 768px) {

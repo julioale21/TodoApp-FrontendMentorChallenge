@@ -60,7 +60,7 @@ export default {
 }
 
 .todo-content {
-  margin-top: -9rem;
+  margin-top: -6.5rem;
   min-width: 328px;
 }
 
@@ -73,6 +73,7 @@ export default {
 @media screen and (min-width: 768px) {
   .todo-content {
     min-width: 541px;
+    margin-top: -9rem;
   }
 }
 </style>

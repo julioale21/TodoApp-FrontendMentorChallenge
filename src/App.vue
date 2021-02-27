@@ -140,6 +140,11 @@ p {
     color: white;
   }
 
+  .todo-filter,
+  .todo-footer {
+    background-color: white;
+  }
+
   @media screen and (min-width: 768px) {
     .app-header-bg-light {
       background-image: url("./assets/bg-desktop-light.jpg");
@@ -171,12 +176,17 @@ p {
     border-bottom: thin solid var(--very-dark-grayish-blue-color);
   }
 
+  .todo-body {
+    background-color: black;
+  }
+
   .todo-content-title {
     color: var(--light-grayish-blue-hover-color);
   }
 
-  .todo-body {
-    background-color: black;
+  .todo-filter,
+  .todo-footer {
+    background-color: hsl(235, 24%, 19%);
   }
 
   @media screen and (min-width: 768px) {

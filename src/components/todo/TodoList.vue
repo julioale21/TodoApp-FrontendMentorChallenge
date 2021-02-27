@@ -2,6 +2,10 @@
   <ul class="todo-list dragArea">
     <todo-item v-for="todo in todos" :key="todo.id" :todo="todo" />
   </ul>
+  <div v-if="todosAll.length" class="todo-control">
+    <TodoListFooter />
+    <TodoListFilter class="d-md-none" />
+  </div>
   <div>
     <span v-if="todos.length" class="drag-message">
       <small>Drag and drop to reorder list</small>
@@ -12,10 +16,12 @@
 <script>
 import { computed, inject, provide, ref } from "vue";
 import TodoItem from "./TodoItem.vue";
+import TodoListFooter from "./TodoListFooter";
+import TodoListFilter from "./TodoListFilter";
 
 export default {
   name: "TodoList",
-  components: { TodoItem },
+  components: { TodoItem, TodoListFooter, TodoListFilter },
   setup() {
     const todosAll = inject("todos");
     const status = ref("all");
@@ -48,6 +54,7 @@ export default {
 .todo-control {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .drag-message {
   display: flex;

@@ -49,7 +49,7 @@ export default {
   justify-content: space-between;
   padding: 0;
   margin: 0;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 }
 
 .todo-content-title {
@@ -62,6 +62,7 @@ export default {
   }
   .todo-content-header {
     width: 541px;
+    margin-bottom: 7rem;
   }
 }
 </style>
