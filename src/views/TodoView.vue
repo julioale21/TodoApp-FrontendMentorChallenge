@@ -27,12 +27,6 @@ export default {
       todos.value = JSON.parse(localStorage.getItem("todos"));
     }
 
-    todos.value = [
-      { name: "sadfasdfasdfa", completed: true, id: 43124124132 },
-      { name: "sadfasdfsadfasdfa", completed: false, id: 43124454132 },
-      { name: "sadfasdfsdafsadfsdafasdfa", completed: true, id: 43124784132 }
-    ];
-
     watchEffect(() => {
       localStorage.setItem("todos", JSON.stringify(todos.value));
     });
