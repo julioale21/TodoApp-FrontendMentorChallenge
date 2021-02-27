@@ -2,7 +2,7 @@
     <img height="300" width="400" src="./docs/frontend-mentor.png">
    </p>
    
-   [![Netlify Status](https://api.netlify.com/api/v1/badges/438555e6-5da0-4e02-bd22-b86903435e66/deploy-status)](https://app.netlify.com/sites/frontend-mentor-todo-app/deploys)
+   [![Netlify Status](https://api.netlify.com/api/v1/badges/37070d2f-4003-4ec7-9e01-1ef5f0b70eaa/deploy-status)](https://app.netlify.com/sites/todoapp-frontend-mentor/deploys)
    ![GitHub package.json version](https://img.shields.io/github/package-json/v/julioale21/todo-frontend-mentor?color=%2394ebcd)
    ![GitHub language count](https://img.shields.io/github/languages/count/julioale21/todo-frontend-mentor)
    ![GitHub top language](https://img.shields.io/github/languages/top/julioale21/todo-frontend-mentor)
@@ -59,7 +59,7 @@ Your users should be able to:
 </p>
 
 ## Demo
-[https://frontend-mentor-todo-app.netlify.app/](https://frontend-mentor-todo-app.netlify.app/)
+[https://todoapp-frontend-mentor.netlify.app/](https://todoapp-frontend-mentor.netlify.app/)
 
 ## Project
 ### Tools
