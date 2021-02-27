@@ -2,10 +2,10 @@
     <img height="300" width="400" src="./docs/frontend-mentor.png">
    </p>
    
-   [![Netlify Status](https://api.netlify.com/api/v1/badges/438555e6-5da0-4e02-bd22-b86903435e66/deploy-status)](https://app.netlify.com/sites/frontend-mentor-todo-app/deploys)
-   ![GitHub package.json version](https://img.shields.io/github/package-json/v/julioale21/todo-frontend-mentor?color=%2394ebcd)
-   ![GitHub language count](https://img.shields.io/github/languages/count/julioale21/todo-frontend-mentor)
-   ![GitHub top language](https://img.shields.io/github/languages/top/julioale21/todo-frontend-mentor)
+   [![Netlify Status](https://api.netlify.com/api/v1/badges/37070d2f-4003-4ec7-9e01-1ef5f0b70eaa/deploy-status)](https://app.netlify.com/sites/todoapp-frontend-mentor/deploys)
+   ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/julioale21/TodoApp-FrontendMentorChallenge)
+   ![GitHub language count](https://img.shields.io/github/languages/count/julioale21/TodoApp-FrontendMentorChallenge)
+   ![GitHub top language](https://img.shields.io/github/languages/top/julioale21/TodoApp-FrontendMentorChallenge)
    
    ### [📖  Go to CHANGELOG.md to view the changes registry](CHANGELOG.md)
    
@@ -59,16 +59,16 @@ Your users should be able to:
 </p>
 
 ## Demo
-[https://frontend-mentor-todo-app.netlify.app/](https://frontend-mentor-todo-app.netlify.app/)
+[https://todoapp-frontend-mentor.netlify.app/](https://todoapp-frontend-mentor.netlify.app/)
 
 ## Project
 ### Tools
 - Vue 3 Framework
 - Composition API
 - Bootstrap
-- Pure CSS
-- Vue Draggable
-- Automate Release
+- CSS and SASS
+- Vue Draggable Next
+- Release-it
 
 ### Project Structure
 The files are structured as follow:
@@ -77,9 +77,10 @@ The files are structured as follow:
     ├── public               # Static Files
     ├── src
         ├── assets           # Project Resources.
-        ├── components       # Reusable Components without state.
+        ├── components       # Principal Components
+            ├── shared       # Base Components
+            ├── todo         # Reusable Components without state.
         ├── docs             # Utilities
-        ├── styles           # Project css.
         ├── views            # Project Pages
     ├── CHANGELOG.md         # Document the changed of the project on `Keep and changelog` format.
     └── README.md            # The first page that the user will view when will visit the repository.
@@ -104,5 +105,3 @@ npm run build
 
 Settings for Continuous Deployment from a Git repository on Netlify 
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
