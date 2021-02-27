@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="app-header"
-    :class="[theme === 'dark' ? 'app-header-bg-dark' : 'app-header-bg-light']"
-  >
+  <div class="app-header">
     <div class="todo-content-header">
       <h1 class="todo-content-title">TODO</h1>
       <span role="button" v-if="theme === 'dark'" @click="toggleTheme('light')">
@@ -16,21 +13,19 @@
 </template>
 
 <script>
+import { inject } from "vue";
 export default {
   name: "Header",
-  props: {
-    theme: {
-      type: String,
-      default: "dark",
-      validation(value) {
-        return ["dark", "light"].indexOf(value) !== -1;
-      }
-    }
-  },
-  methods: {
-    toggleTheme(value) {
-      this.$emit("toggleTheme", value);
-    }
+  setup() {
+    const theme = inject("theme");
+
+    const toggleTheme = value => {
+      theme.value = value;
+    };
+    return {
+      theme,
+      toggleTheme
+    };
   }
 };
 </script>

@@ -116,7 +116,7 @@ p {
   .todo-form {
     background-color: white;
   }
-  .app-header-bg-light {
+  .app-header {
     background-image: url("./assets/bg-mobile-light.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -146,7 +146,7 @@ p {
   }
 
   @media screen and (min-width: 768px) {
-    .app-header-bg-light {
+    .app-header {
       background-image: url("./assets/bg-desktop-light.jpg");
     }
   }
@@ -160,7 +160,7 @@ p {
     }
   }
 
-  .app-header-bg-dark {
+  .app-header {
     background-image: url("./assets/bg-mobile-dark.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -190,7 +190,7 @@ p {
   }
 
   @media screen and (min-width: 768px) {
-    .app-header-bg-dark {
+    .app-header {
       background-image: url("./assets/bg-desktop-dark.jpg");
     }
   }

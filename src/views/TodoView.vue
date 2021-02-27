@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex flex-column">
-    <Header :theme="theme" @toggle-theme="toggleTheme" />
+    <Header />
 
     <div class="todo-body">
       <div class="todo-content d-flex flex-column align-items-center">
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { inject, provide, ref, watchEffect } from "vue";
+import { provide, ref, watchEffect } from "vue";
 import Header from "../components/Header";
 import TodoList from "../components/todo/TodoList";
 import TodoForm from "../components/todo/TodoForm.vue";
@@ -22,7 +22,6 @@ export default {
   components: { Header, TodoList, TodoForm },
   setup() {
     const todos = ref([]);
-    const theme = inject("theme");
 
     if (localStorage.getItem("todos")) {
       todos.value = JSON.parse(localStorage.getItem("todos"));
@@ -34,19 +33,11 @@ export default {
       { name: "sadfasdfsdafsadfsdafasdfa", completed: true, id: 43124784132 }
     ];
 
-    const toggleTheme = value => {
-      theme.value = value;
-    };
-
     watchEffect(() => {
       localStorage.setItem("todos", JSON.stringify(todos.value));
     });
 
     provide("todos", todos);
-    return {
-      theme,
-      toggleTheme
-    };
   }
 };
 </script>
