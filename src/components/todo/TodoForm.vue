@@ -5,7 +5,6 @@
       type="text"
       name="todo-name"
       class="todo-form-input"
-      :class="theme"
       placeholder="Create a new todo..."
       v-model.trim="todoName"
     />
