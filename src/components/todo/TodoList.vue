@@ -1,13 +1,19 @@
 <template>
-  <draggable class="todo-list dragArea" :list="todos">
-    <todo-item v-for="todo in todos" :key="todo.id" :todo="todo" />
-  </draggable>
-  <div v-if="todosAll.length" class="todo-control">
-    <TodoListFooter />
-    <TodoListFilter class="d-md-none" />
-  </div>
   <div>
-    <span v-if="todos.length" class="drag-message">
+    <draggable class="todo-list dragArea" :list="todosFiltered">
+      <todo-item
+        id="todo-item"
+        v-for="todo in todosFiltered"
+        :key="todo.id"
+        :todo="todo"
+      />
+    </draggable>
+    <div v-if="todos.length" class="todo-control">
+      <TodoListFooter />
+      <TodoListFilter class="d-md-none" />
+    </div>
+
+    <span v-if="todosFiltered && todosFiltered.length" class="drag-message">
       <small>Drag and drop to reorder list</small>
     </span>
   </div>
@@ -29,23 +35,23 @@ export default {
     TodoListFilter
   },
   setup() {
-    const todosAll = inject("todos");
+    const todos = inject("todos");
     const status = ref("all");
 
-    const todos = computed(() => {
+    const todosFiltered = computed(() => {
       if (status.value === "active") {
-        return todosAll.value.filter(todo => todo.completed === false);
+        return todos.value.filter(todo => todo.completed === false);
       }
       if (status.value === "completed") {
-        return todosAll.value.filter(todo => todo.completed === true);
+        return todos.value.filter(todo => todo.completed === true);
       }
 
-      return todosAll.value;
+      return todos.value;
     });
     provide("status", status);
     return {
-      todosAll,
-      todos
+      todos,
+      todosFiltered
     };
   }
 };
