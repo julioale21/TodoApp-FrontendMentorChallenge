@@ -1,42 +1,28 @@
 <template>
-  <div>
-    <draggable class="todo-list dragArea" :list="todosFiltered">
-      <todo-item
-        id="todo-item"
-        v-for="todo in todosFiltered"
-        :key="todo.id"
-        :todo="todo"
-      />
-    </draggable>
-    <div v-if="todos.length" class="todo-control">
-      <TodoListFooter />
-      <TodoListFilter class="d-md-none" />
-    </div>
-
-    <span v-if="todosFiltered && todosFiltered.length" class="drag-message">
-      <small>Drag and drop to reorder list</small>
-    </span>
-  </div>
+  <draggable class="todo-list dragArea" :list="todosFiltered">
+    <todo-item
+      id="todo-item"
+      v-for="todo in todosFiltered"
+      :key="todo.id"
+      :todo="todo"
+    />
+  </draggable>
 </template>
 
 <script>
-import { computed, inject, provide, ref } from "vue";
+import { computed, inject } from "vue";
 import TodoItem from "./TodoItem.vue";
-import TodoListFooter from "./TodoListFooter";
-import TodoListFilter from "./TodoListFilter";
 import { VueDraggableNext } from "vue-draggable-next";
 
 export default {
   name: "TodoList",
   components: {
     draggable: VueDraggableNext,
-    TodoItem,
-    TodoListFooter,
-    TodoListFilter
+    TodoItem
   },
   setup() {
     const todos = inject("todos");
-    const status = ref("all");
+    const status = inject("status");
 
     const todosFiltered = computed(() => {
       if (status.value === "active") {
@@ -48,7 +34,7 @@ export default {
 
       return todos.value;
     });
-    provide("status", status);
+
     return {
       todos,
       todosFiltered

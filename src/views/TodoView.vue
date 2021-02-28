@@ -6,6 +6,15 @@
       <div class="todo-content d-flex flex-column align-items-center">
         <TodoForm />
         <TodoList />
+
+        <div v-if="todos.length" class="todo-control">
+          <TodoListFooter />
+          <TodoListFilter class="d-md-none" />
+        </div>
+
+        <span v-if="todos.length" class="drag-message">
+          <small>Drag and drop to reorder list</small>
+        </span>
       </div>
     </div>
   </div>
@@ -16,12 +25,15 @@ import { provide, ref, watchEffect } from "vue";
 import Header from "../components/Header";
 import TodoList from "../components/todo/TodoList";
 import TodoForm from "../components/todo/TodoForm.vue";
+import TodoListFooter from "../components/todo/TodoListFooter";
+import TodoListFilter from "../components/todo/TodoListFilter";
 
 export default {
   name: "TodoView",
-  components: { Header, TodoList, TodoForm },
+  components: { Header, TodoList, TodoForm, TodoListFooter, TodoListFilter },
   setup() {
     const todos = ref([]);
+    const status = ref("all");
 
     if (localStorage.getItem("todos")) {
       todos.value = JSON.parse(localStorage.getItem("todos"));
@@ -32,6 +44,12 @@ export default {
     });
 
     provide("todos", todos);
+    provide("status", status);
+
+    return {
+      todos,
+      status
+    };
   }
 };
 </script>

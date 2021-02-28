@@ -20,7 +20,6 @@ describe("TodoList", () => {
   });
 
   it("should render", () => {
-    expect(wrapper.exists()).toBe(true); 
+    expect(wrapper.exists()).toBe(true);
   });
-
 });
