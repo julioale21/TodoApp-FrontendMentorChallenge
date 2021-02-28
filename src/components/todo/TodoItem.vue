@@ -1,6 +1,6 @@
 <template>
   <div class="todo">
-    <checked-icon @click="completeTodo(todo.id)" :completed="todo.completed" />
+    <checked-icon :completed="todo.completed" />
     <li class="d-flex justify-content-between align-items-center p-0">
       <span
         :class="{ 'text-decoration-line-through': todo.completed }"
