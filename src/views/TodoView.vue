@@ -4,7 +4,7 @@
 
     <div class="todo-body">
       <div class="todo-content d-flex flex-column align-items-center">
-        <TodoForm :theme="theme" />
+        <TodoForm />
         <TodoList />
       </div>
     </div>
