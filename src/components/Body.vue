@@ -30,7 +30,7 @@ export default {
 
     return { todos };
   }
-}
+};
 </script>
 
 <style scoped>

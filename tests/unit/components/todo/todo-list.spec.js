@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import TodoList from "@/components/todo/TodoList";
 
 describe("TodoList", () => {
@@ -10,11 +10,12 @@ describe("TodoList", () => {
 
   let status = "all";
 
-  const wrapper = shallowMount(TodoList, {
+  const wrapper = mount(TodoList, {
     global: {
       provide: {
         todos,
-        status
+        status,
+        todosFiltered: todos
       }
     }
   });
