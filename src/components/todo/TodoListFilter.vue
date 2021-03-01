@@ -3,6 +3,7 @@
     class="d-flex justify-content-around align-items-center mt-3 mt-md-0 px-1 todo-filter"
   >
     <span
+      id="all"
       role="button"
       @click="filter('all')"
       :class="{ active: status === 'all' }"
@@ -11,6 +12,7 @@
       <small>All</small>
     </span>
     <span
+      id="active"
       role="button"
       @click="filter('active')"
       :class="{ active: status === 'active' }"
@@ -19,6 +21,7 @@
       <small>Active</small>
     </span>
     <span
+      id="completed"
       role="button"
       @click="filter('completed')"
       :class="{ active: status === 'completed' }"
