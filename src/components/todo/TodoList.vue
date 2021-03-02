@@ -1,11 +1,6 @@
 <template>
   <draggable class="todo-list dragArea" :list="todosFiltered">
-    <TodoItem
-      id="todo-item"
-      v-for="todo in todosFiltered"
-      :key="todo.id"
-      :todo="todo"
-    />
+    <TodoItem v-for="todo in todosFiltered" :key="todo.id" :todo="todo" />
   </draggable>
 </template>
 
